@@ -8,6 +8,7 @@ git clone https://github.com/khphillips/test-vue.git
 cd test-vue
 npm install
 ```
+Cool, now you have the directory and can start fooling around. 
 
 ### Compiles and hot-reloads for development
 ```

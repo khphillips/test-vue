@@ -1,0 +1,13 @@
+/* Start overriding css values here or creating new ones. */
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i,800,800i&display=swap');
+
+body .v-application {
+	font-family: "Open Sans", sans, sans-serif;
+}
+
+h1 {
+	text-transform: uppercase;
+	font-weight: 100;
+	letter-spacing: 0.1em
+}
