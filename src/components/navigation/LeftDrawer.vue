@@ -1,0 +1,54 @@
+<template>
+	<div>
+		<v-navigation-drawer v-model="drawer" :clipped="true" disable-route-watcher left app hide-overlay :mini-variant.sync="mini" :permanent="!$vuetify.breakpoint.xs" @input="updateValue()">
+			<v-list dense>
+				<menu-item icon="fas fa-home" route="Dashboard">Dashboard</menu-item>
+				<v-list-item @click.stop="utilDrawer = !utilDrawer">
+					<v-list-item-action>
+						<v-icon>fas fa-tools</v-icon>
+					</v-list-item-action>
+					<v-list-item-content>
+						<v-list-item-title>Open Temporary Drawer</v-list-item-title>
+					</v-list-item-content>
+				</v-list-item>
+			</v-list>
+		</v-navigation-drawer>
+		<v-navigation-drawer v-model="utilDrawer" fixed temporary>Maybe some other tools</v-navigation-drawer>
+	</div>
+</template>
+<script>
+import MenuItem from './MenuItem.vue'
+export default {
+	props: ['value'],
+	data: function() {
+		return {
+			drawer: !this.$vuetify.breakpoint.xs,
+			utilDrawer: false,
+		}
+	},
+	mounted: function() {
+		this.drawer = !this.$vuetify.breakpoint.xs;
+	},
+	methods: {
+		updateValue() {
+			this.$emit('input', this.drawer)
+		}
+	},
+	watch: {
+		'value': function(newV) {
+			this.drawer = newV
+		},
+	},
+	computed: {
+		'mini': function() {
+			if (this.$vuetify.breakpoint.xs) {
+				return false;
+			}
+			return this.drawer;
+		}
+	},
+	components: {
+		MenuItem
+	}
+}
+</script>
