@@ -17,13 +17,13 @@ npm run serve
 
 This will compile the app and then fire up a dev server. Go to the address in your browser, http://localhost:8080/ 
 
-Everytime you save changes to the code, it will automatically recomile and refresh the browser. 
+Everytime you save changes to the code, it will automatically recompile and refresh the browser. 
 
 You will want to open developer tools to the console to help debug. You can also install the Chrome extension : https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd
 
 ### Think in terms of components
 
-Maybe start by checking out the "Dashboard" view in "src/views/Dashboard.vue". This view is a "component". There's two parts to it. The "template" which is the html and DOM structure. And then the "script" where all the code goes. If you follow along on the vuejs "getting started site" you can use the Dashboard as your test. The main difference is the examples they give will looks like this:
+Maybe start by checking out the "Dashboard" view in "src/views/Dashboard.vue". This view is a "component". There's two parts to it. The "template" which is the html and DOM structure. And then the "script" where all the code goes. If you follow along on the vuejs "getting started site" you can use the Dashboard as your test. https://vuejs.org/v2/guide/ The main difference is the examples they give will looks like this:
 
 ```
 var app2 = new Vue({
@@ -34,7 +34,7 @@ var app2 = new Vue({
 })
 ```
 
-That's as if you are using vue without components. To do the samples within our Dashboard view you will look for the "data" section in the script and modify that instead of the whole var app2 stuf... it will look like this:
+That's as if you are using vue without components. To do the samples within our Dashboard view you will look for the "data" section in the script area and modify that instead of the whole var app2 stuf... it will look like this:
 
 ```
 export default {
@@ -59,7 +59,7 @@ I would recommend the doing some of the getting started stuff on the vuejs site:
 
 ### UI & CSS
 
-This demo is set up to use Vuetify. https://vuetifyjs.com/en/introduction/why-vuetify Document is excellent. You can use and play with any of the components. For example add an alert to our dashboard: https://vuetifyjs.com/en/components/alerts Paste the code below into the template section of the Dashboard.vue file. Maybe just below the <v-container fluid>. A template can only have 1 root element, so it needs to be inside the v-container element in this case.  
+This demo is set up to use Vuetify. https://vuetifyjs.com/en/introduction/why-vuetify Document is excellent. You can use and play with any of the components. For example add an alert to our dashboard: https://vuetifyjs.com/en/components/alerts Paste the code below into the template section of the Dashboard.vue file. Maybe just below the ```<v-container fluid>```. A template can only have 1 root element, so it needs to be inside the v-container element in this case.  
 
 ```
 <v-alert type="info" >

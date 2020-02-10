@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<v-navigation-drawer v-model="drawer" :clipped="true" disable-route-watcher left app hide-overlay :mini-variant.sync="mini" :permanent="!$vuetify.breakpoint.xs" @input="updateValue()">
-			<v-btn small fab @click="close">
+			<v-btn v-if="this.$vuetify.breakpoint.xs" small fab @click="close">
 				<v-icon>fas fa-times</v-icon>
 			</v-btn>
 			<v-list dense>
