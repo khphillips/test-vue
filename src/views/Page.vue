@@ -1,5 +1,6 @@
 <template>
 	<div class="home">
+		<h1>Page</h1>
 		<v-container class="fill-height" fluid>
 			<v-row justify="space-between" align="start">
 				<v-col cols="6">
@@ -23,12 +24,11 @@
 </template>
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
-	name: 'Home',
+	name: 'Page',
 	components: {
-		HelloWorld
+
 	}
 }
 </script>

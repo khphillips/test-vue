@@ -1,16 +1,14 @@
 <template>
 	<div>
 		<v-navigation-drawer v-model="drawer" :clipped="true" disable-route-watcher left app hide-overlay :mini-variant.sync="mini" :permanent="!$vuetify.breakpoint.xs" @input="updateValue()">
+			<v-btn small fab @click="close">
+				<v-icon>fas fa-times</v-icon>
+			</v-btn>
 			<v-list dense>
 				<menu-item icon="fas fa-home" route="Dashboard">Dashboard</menu-item>
-				<v-list-item @click.stop="utilDrawer = !utilDrawer">
-					<v-list-item-action>
-						<v-icon>fas fa-tools</v-icon>
-					</v-list-item-action>
-					<v-list-item-content>
-						<v-list-item-title>Open Temporary Drawer</v-list-item-title>
-					</v-list-item-content>
-				</v-list-item>
+				<menu-item icon="fas fa-adjust" route="About">About</menu-item>
+				<menu-item icon="fas fa-archive" route="Page">Page</menu-item>
+				<menu-item icon="fas fa-tools" :click="toggleUtilityDrawer">Utility Drawer</menu-item>
 			</v-list>
 		</v-navigation-drawer>
 		<v-navigation-drawer v-model="utilDrawer" fixed temporary>Maybe some other tools</v-navigation-drawer>
@@ -32,6 +30,13 @@ export default {
 	methods: {
 		updateValue() {
 			this.$emit('input', this.drawer)
+		},
+		toggleUtilityDrawer() {
+			this.utilDrawer = !this.utilDrawer
+		},
+		close() {
+			this.drawer = false;
+			this.updateValue();
 		}
 	},
 	watch: {
